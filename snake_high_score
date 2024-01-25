@@ -1,0 +1,37 @@
+void display() {
+  fill(255);
+  rect(200, 10, 100, 20);
+  fill(0);
+  textSize(14);
+  int currentScore = snakesize - 5;
+  text("Score: " + currentScore, 250, 25);
+
+  // Update high score if the current score is greater
+  if (currentScore > highScore) {
+    highScore = currentScore;
+  }
+
+  text("High Score: " + highScore, 250, 50);
+
+  if (headx[1] == applex && heady[1] == appley) {
+    //grow and spawn the apple somewhere away from the snake
+    //(currently some of the code below might not be working, but the game still works.)
+    snakesize += 1;
+    redo = true;
+    while (redo) {
+      applex = (round(random(47)) + 1) * 8;
+      appley = (round(random(50, 50)) + 1) * 8;
+      for (int i = 1; i < snakesize; i++) {
+
+        if (applex == headx[i] && appley == heady[i]) {
+
+          text("Score:  " + str(snakesize - 5) + " ", 250, 50);
+
+          redo = true;
+        } else {
+          redo = false;
+          i = 1000;
+        }
+      }
+    }
+  }
