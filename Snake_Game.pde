@@ -5,8 +5,8 @@ int waktu=0;
 int highScore = 0;
 int[] kepalax= new int[2500];
 int[] kepalay= new int[2500];
-int jerukx=(round(random(47))+1)*8;
-int jeruky=(round(random(55,55))+1)*8;
+int jerukx=(round(random(47))+11)*8;
+int jeruky=(round(random(47))+11)*8;
 boolean lagi=true;
 boolean gameberhenti=false;
 
@@ -29,16 +29,17 @@ void draw()
     //draw stationary stuff
   waktu+=1;
 
-  fill(255,0,0);
+  fill(255,180,180);
   stroke(0);
   rect(jerukx,jeruky,8,8);
   fill(0);
   stroke(0);
+  rect(jerukx+3,jeruky-1,2,4);
   
   rect(0,30,width,5);
-  rect(0,height-8,width,8);
+
   rect(0,0,8,height);
-  rect(width-8,0,8,height);
+
   //my modulating waktu by 5, we create artificial frames each 5 frames
   //(otherwise the game would go WAY too fast!)
   if ((waktu % 5)==0)
@@ -146,8 +147,8 @@ void display() {
     ukuranular += 1;
     lagi = true;
     while (lagi) {
-      jerukx = (round(random(47)) + 1) * 8;
-      jeruky = (round(random(47,47)) + 1) * 8;
+      jerukx = (round(random(47)) + 10) * 8;
+      jeruky = (round(random(47)) + 10) * 8;
       for (int i = 1; i < ukuranular; i++) {
 
         if (jerukx == kepalax[i] && jeruky == kepalay[i]) {
@@ -167,10 +168,10 @@ void display() {
  
   fill(0,200,100);
   ellipseMode(CORNER);
-  ellipse(kepalax[1],kepalay[1],10,10);
+  ellipse(kepalax[1],kepalay[1],12,12);
   fill(255);
   stroke(255);
-  rect(kepalax[ukuranular],kepalay[ukuranular],10,10);
+  rect(kepalax[ukuranular],kepalay[ukuranular],12,12);
 }
 void checkdead()
 {
@@ -182,9 +183,9 @@ void checkdead()
       
       rect(125,125,160,100);
       fill(0);
-      text("GAME OVER",200,150);
+      text("GAME OVER",250,250);
       
-      text("To restart, press Shift.",200,200);
+      text("To restart, press Shift.",250,200);
       gameberhenti=true;
     }
  
@@ -193,7 +194,7 @@ void checkdead()
       fill(255);
       rect(250,125,160,100);
       fill(0);
-      text("GAME OVER",250,2500);
+      text("GAME OVER",250,250);
       text("To restart, press Shift.",250,200);
       gameberhenti=true;
     }
@@ -211,8 +212,8 @@ void restart()
     kepalay[i]=0;
   }
   gameberhenti=false;
-  jerukx=(round(random(55))+1)*8;
-  jeruky=(round(random(55))+1)*8;
+  jerukx=(round(random(55))+5)*8;
+  jeruky=(round(random(55))+5)*8;
   ukuranular=5;
   waktu=0;
   sudut=0;
