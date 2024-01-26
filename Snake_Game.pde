@@ -9,7 +9,7 @@ int highScore = 0;
 int[] kepalax= new int[2500];
 int[] kepalay= new int[2500];
 int jerukx=(round(random(47))+1)*8;
-int jeruky=(round(random(55,55))+1)*8;
+int jeruky=(round(random(100,100))+1)*8;
 boolean lagi=true;
 boolean gameberhenti=false;
 
