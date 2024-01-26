@@ -170,10 +170,10 @@ void display() {
  
   fill(0,200,100);
   ellipseMode(CORNER);
-  ellipse(kepalax[1],kepalay[1],8,8);
+  ellipse(kepalax[1],kepalay[1],10,10);
   fill(255);
   stroke(255);
-  rect(kepalax[ukuranular],kepalay[ukuranular],8,8);
+  rect(kepalax[ukuranular],kepalay[ukuranular],10,10);
 }
 void checkdead()
 {
