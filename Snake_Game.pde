@@ -6,7 +6,7 @@ int highScore = 0;
 int[] kepalax= new int[2500];
 int[] kepalay= new int[2500];
 int jerukx=(round(random(47))+1)*8;
-int jeruky=(round(random(100,100))+1)*8;
+int jeruky=(round(random(55,55))+1)*8;
 boolean lagi=true;
 boolean gameberhenti=false;
 
@@ -147,7 +147,7 @@ void display() {
     lagi = true;
     while (lagi) {
       jerukx = (round(random(47)) + 1) * 8;
-      jeruky = (round(random(55,55)) + 90) * 8;
+      jeruky = (round(random(47,47)) + 1) * 8;
       for (int i = 1; i < ukuranular; i++) {
 
         if (jerukx == kepalax[i] && jeruky == kepalay[i]) {
@@ -193,7 +193,7 @@ void checkdead()
       fill(255);
       rect(250,125,160,100);
       fill(0);
-      text("GAME OVER",250,180);
+      text("GAME OVER",250,2500);
       text("To restart, press Shift.",250,200);
       gameberhenti=true;
     }
@@ -211,8 +211,8 @@ void restart()
     kepalay[i]=0;
   }
   gameberhenti=false;
-  jerukx=(round(random(47))+1)*8;
-  jeruky=(round(random(47))+1)*8;
+  jerukx=(round(random(55))+1)*8;
+  jeruky=(round(random(55))+1)*8;
   ukuranular=5;
   waktu=0;
   sudut=0;
