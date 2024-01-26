@@ -1,6 +1,3 @@
-//BY Ian151 (ChromeWing)
-//inspired by the original snake game
-//this is a test for creating small games in processing.
 
 int sudut=0;
 int ukuranular=5;
